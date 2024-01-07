@@ -1,4 +1,9 @@
 .SILENT:
+.PHONY: install
+install:
+	sudo cp -f lib/* /usr/include
+
+.SILENT:
 .PHONY: clean
 clean:
 	rm -f main main.o
@@ -6,5 +11,4 @@ clean:
 .SILENT:
 .PHONY: build
 build:
-	sudo cp -f ./lib/* /lib
-	zig build-exe src/main.zig -ladd -lc -O ReleaseSmall
+	zig build-exe src/main.zig -L/usr/include -ladd -lc -O ReleaseSmall

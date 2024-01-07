@@ -1,6 +1,6 @@
 const std = @import("std");
 const lib = @cImport({
-    @cInclude("../lib/libadd.h");
+    @cInclude("libadd.h");
 });
 
 pub fn main() anyerror!void {
